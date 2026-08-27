@@ -1,5 +1,5 @@
 """
-THis is my variation of 
+A fool's attempt at programming a chess engine.
 """
 
 import chess
