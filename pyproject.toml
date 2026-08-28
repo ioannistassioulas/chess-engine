@@ -7,7 +7,11 @@ authors = [
     { name = "ioannistassioulas", email = "i.a.tassioulas@gmail.com" }
 ]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "cairosvg>=2.9.0",
+    "chess>=1.11.2",
+    "pillow>=12.3.0",
+]
 
 [project.scripts]
 chess-engine = "chess_engine:main"
@@ -15,3 +19,35 @@ chess-engine = "chess_engine:main"
 [build-system]
 requires = ["uv_build>=0.12.7,<0.13.0"]
 build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "mypy>=2.3.1",
+    "pytest>=9.1.1",
+    "pytest-cov>=7.1.0",
+    "ruff>=0.16.5",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.mypy]
+python_version = "3.13"
+strict = true
+packages = ["chess_engine"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+license = "MIT"
+classifiers = [
+    "Programming Language :: Python :: 3.13",
+    "Operating System :: OS Independent",
+]
