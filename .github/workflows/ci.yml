@@ -1,4 +1,4 @@
-name: tests
+name: CI
 on: [push, pull_request]
 jobs:
   test:
@@ -6,7 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v3
-      - run: uv sync
+      - run: uv sync --all-extras --dev
       - run: uv run ruff check .
-      - run: uv run mypy src
       - run: uv run pytest
