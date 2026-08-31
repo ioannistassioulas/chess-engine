@@ -29,6 +29,9 @@ def chess_movie(
     board = chess.Board(chess.Board.starting_fen)  # define the board
 
     png_bytes = cairosvg.svg2png(bytestring=chess.svg.board(board))
+    if png_bytes is None:
+        raise ValueError("Unable to render starting chess board")
+
     starting_position_frame = Image.open(io.BytesIO(png_bytes))
     frames = []
     frames.append(starting_position_frame)
