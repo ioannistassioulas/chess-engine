@@ -10,6 +10,7 @@ requires-python = ">=3.13"
 dependencies = [
     "cairosvg>=2.9.0",
     "chess>=1.11.2",
+    "imageio>=2.37.4",
     "pillow>=12.3.0",
     "pre-commit>=4.6.2",
 ]
