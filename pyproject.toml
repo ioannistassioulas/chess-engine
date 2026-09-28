@@ -15,6 +15,16 @@ dependencies = [
     "pre-commit>=4.6.2",
 ]
 
+license-files = ["LICENSE"]
+license = "GPL-3.0-or-later"
+
+classifiers = [
+    "Programming Language :: Python :: 3.13",
+    "Operating System :: OS Independent",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+]
+
+
 [project.scripts]
 chess-engine = "chess_engine:main"
 
@@ -51,11 +61,3 @@ packages = ["chess_engine"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-
-license-files = ["LICENSE"]
-license = "GPL-3.0-or-later"
-classifiers = [
-    "Programming Language :: Python :: 3.13",
-    "Operating System :: OS Independent",
-    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
-]
